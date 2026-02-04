@@ -102,4 +102,12 @@ private void Move()
             heldWeapon.reloadPub();
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.TryGetComponent(out Itriggerable interfaceComponent))
+        {
+            interfaceComponent.onTriggerEnterAction();
+        }
+    }
 }
